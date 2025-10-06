@@ -195,7 +195,11 @@ static void _pdf_exception(int errnum, const char *apiname,
 #if PHP_MAJOR_VERSION >= 7
         zval ex;
         zend_class_entry *def_ex;
+#if PHP_MAJOR_VERSION >= 8
+        def_ex = zend_ce_exception;
+#else
         def_ex = zend_exception_get_default(TSRMLS_C);
+#endif
         object_init_ex(&ex, pdflib_exception_class);
 
         if (apiname) {
@@ -393,7 +397,10 @@ PHP_MINIT_FUNCTION(PDFlib)
     /* add PDFlibException class */
     {
         INIT_CLASS_ENTRY(ce_ex, "PDFlibException", class_PDFlibException_methods);
-#if PHP_MAJOR_VERSION >= 7
+#if PHP_MAJOR_VERSION >= 8
+        pdflib_exception_class = zend_register_internal_class_ex(&ce_ex,
+                zend_ce_exception);
+#elif PHP_MAJOR_VERSION >= 7
         pdflib_exception_class = zend_register_internal_class_ex(&ce_ex,
                 zend_exception_get_default(TSRMLS_C) TSRMLS_CC);
 #else /* PHP_MAJOR_VERSION >= 7 */
