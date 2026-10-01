@@ -35,7 +35,7 @@ if test "$PHP_PDFLIB" != "no"; then
       else
 	  if test -f "$PHP_PDFLIB/pdflib.h" ; then
 	      AC_DEFINE(HAVE_PDFLIB,1,[ ]) 
-	      PHP_ADD_LIBRARY_WITH_PATH(s_libpdf, $PHP_PDFLIB, PDF_SHARED_LIBADD)
+	      PHP_ADD_LIBRARY_WITH_PATH(pdf, $PHP_PDFLIB, PDF_SHARED_LIBADD)
 	      PHP_ADD_INCLUDE($PHP_PDFLIB)
 	  else
 	      AC_MSG_ERROR([pdflib.h not found! Check the path passed to --with-pdflib=<PATH>. PATH should be the install prefix directory.])
