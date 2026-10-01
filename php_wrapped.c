@@ -71,6 +71,7 @@ PHP_FUNCTION(pdf_activate_item)
 /* {{{ proto int PDF_add_bookmark(
 resource p, string text, int parent, int open)
  * Deprecated, use  PDF_create_bookmark() */
+#if PDFLIB_MAJORVERSION < 11
 PHP_FUNCTION(pdf_add_bookmark)
 {
     PDF *pdf;
@@ -150,12 +151,14 @@ php_error_docref(NULL TSRMLS_CC, E_DEPRECATED, "Deprecated, use  PDF_create_book
 
     RETURN_LONG(_result);
 }
+#endif /* PDFLIB_MAJORVERSION < 11 */
 /* }}} */
 
     
 /* {{{ proto bool PDF_add_launchlink(
 resource p, double llx, double lly, double urx, double ury, string filename)
  * Deprecated, use PDF_create_action() and PDF_create_annotation() */
+#if PDFLIB_MAJORVERSION < 11
 PHP_FUNCTION(pdf_add_launchlink)
 {
     PDF *pdf;
@@ -224,12 +227,14 @@ php_error_docref(NULL TSRMLS_CC, E_DEPRECATED, "Deprecated, use PDF_create_actio
     
     RETURN_TRUE;
 }
+#endif /* PDFLIB_MAJORVERSION < 11 */
 /* }}} */
 
     
 /* {{{ proto bool PDF_add_locallink(
 resource p, double llx, double lly, double urx, double ury, int page, string optlist)
  * Deprecated, use PDF_create_action() and PDF_create_annotation() */
+#if PDFLIB_MAJORVERSION < 11
 PHP_FUNCTION(pdf_add_locallink)
 {
     PDF *pdf;
@@ -304,6 +309,7 @@ php_error_docref(NULL TSRMLS_CC, E_DEPRECATED, "Deprecated, use PDF_create_actio
     
     RETURN_TRUE;
 }
+#endif /* PDFLIB_MAJORVERSION < 11 */
 /* }}} */
 
     
@@ -389,6 +395,7 @@ PHP_FUNCTION(pdf_add_nameddest)
 /* {{{ proto bool PDF_add_note(
 resource p, double llx, double lly, double urx, double ury, string contents, string title, string icon, int open)
  * Deprecated, use PDF_create_annotation() */
+#if PDFLIB_MAJORVERSION < 11
 PHP_FUNCTION(pdf_add_note)
 {
     PDF *pdf;
@@ -483,6 +490,7 @@ php_error_docref(NULL TSRMLS_CC, E_DEPRECATED, "Deprecated, use PDF_create_annot
     
     RETURN_TRUE;
 }
+#endif /* PDFLIB_MAJORVERSION < 11 */
 /* }}} */
 
     
@@ -577,6 +585,7 @@ PHP_FUNCTION(pdf_add_path_point)
 /* {{{ proto bool PDF_add_pdflink(
 resource p, double llx, double lly, double urx, double ury, string filename, int page, string optlist)
  * Deprecated, use PDF_create_action() and PDF_create_annotation() */
+#if PDFLIB_MAJORVERSION < 11
 PHP_FUNCTION(pdf_add_pdflink)
 {
     PDF *pdf;
@@ -659,6 +668,7 @@ php_error_docref(NULL TSRMLS_CC, E_DEPRECATED, "Deprecated, use PDF_create_actio
     
     RETURN_TRUE;
 }
+#endif /* PDFLIB_MAJORVERSION < 11 */
 /* }}} */
 
     
@@ -1021,6 +1031,7 @@ PHP_FUNCTION(pdf_add_textflow)
 /* {{{ proto bool PDF_add_thumbnail(
 resource p, int image)
  * Deprecated */
+#if PDFLIB_MAJORVERSION < 11
 PHP_FUNCTION(pdf_add_thumbnail)
 {
     PDF *pdf;
@@ -1085,12 +1096,14 @@ php_error_docref(NULL TSRMLS_CC, E_DEPRECATED, "Deprecated");
     
     RETURN_TRUE;
 }
+#endif /* PDFLIB_MAJORVERSION < 11 */
 /* }}} */
 
     
 /* {{{ proto bool PDF_add_weblink(
 resource p, double llx, double lly, double urx, double ury, string url)
  * Deprecated, use PDF_create_action() and PDF_create_annotation() */
+#if PDFLIB_MAJORVERSION < 11
 PHP_FUNCTION(pdf_add_weblink)
 {
     PDF *pdf;
@@ -1159,6 +1172,7 @@ php_error_docref(NULL TSRMLS_CC, E_DEPRECATED, "Deprecated, use PDF_create_actio
     
     RETURN_TRUE;
 }
+#endif /* PDFLIB_MAJORVERSION < 11 */
 /* }}} */
 
     
@@ -1362,6 +1376,7 @@ PHP_FUNCTION(pdf_arcn)
 /* {{{ proto bool PDF_attach_file(
 resource p, double llx, double lly, double urx, double ury, string filename, string description, string author, string mimetype, string icon)
  * Deprecated, use  PDF_create_annotation() */
+#if PDFLIB_MAJORVERSION < 11
 PHP_FUNCTION(pdf_attach_file)
 {
     PDF *pdf;
@@ -1466,6 +1481,7 @@ php_error_docref(NULL TSRMLS_CC, E_DEPRECATED, "Deprecated, use  PDF_create_anno
     
     RETURN_TRUE;
 }
+#endif /* PDFLIB_MAJORVERSION < 11 */
 /* }}} */
 
     
@@ -1710,6 +1726,7 @@ PHP_FUNCTION(pdf_begin_font)
 /* {{{ proto bool PDF_begin_glyph(
 resource p, string glyphname, double wx, double llx, double lly, double urx, double ury)
  * Deprecated, use PDF_begin_glyph_ext() */
+#if PDFLIB_MAJORVERSION < 11
 PHP_FUNCTION(pdf_begin_glyph)
 {
     PDF *pdf;
@@ -1781,6 +1798,7 @@ php_error_docref(NULL TSRMLS_CC, E_DEPRECATED, "Deprecated, use PDF_begin_glyph_
     
     RETURN_TRUE;
 }
+#endif /* PDFLIB_MAJORVERSION < 11 */
 /* }}} */
 
     
@@ -2086,6 +2104,7 @@ PHP_FUNCTION(pdf_begin_mc)
 /* {{{ proto bool PDF_begin_page(
 resource p, double width, double height)
  * Deprecated, use PDF_begin_page_ext() */
+#if PDFLIB_MAJORVERSION < 11
 PHP_FUNCTION(pdf_begin_page)
 {
     PDF *pdf;
@@ -2144,6 +2163,7 @@ php_error_docref(NULL TSRMLS_CC, E_DEPRECATED, "Deprecated, use PDF_begin_page_e
     
     RETURN_TRUE;
 }
+#endif /* PDFLIB_MAJORVERSION < 11 */
 /* }}} */
 
     
@@ -2221,6 +2241,7 @@ PHP_FUNCTION(pdf_begin_page_ext)
 /* {{{ proto int PDF_begin_pattern(
 resource p, double width, double height, double xstep, double ystep, int painttype)
  * Deprecated, use PDF_begin_pattern_ext() */
+#if PDFLIB_MAJORVERSION < 11
 PHP_FUNCTION(pdf_begin_pattern)
 {
     PDF *pdf;
@@ -2290,6 +2311,7 @@ php_error_docref(NULL TSRMLS_CC, E_DEPRECATED, "Deprecated, use PDF_begin_patter
     
     RETURN_LONG(_result);
 }
+#endif /* PDFLIB_MAJORVERSION < 11 */
 /* }}} */
 
     
@@ -2370,6 +2392,7 @@ PHP_FUNCTION(pdf_begin_pattern_ext)
 /* {{{ proto int PDF_begin_template(
 resource p, double width, double height)
  * Deprecated, use PDF_begin_template_ext() */
+#if PDFLIB_MAJORVERSION < 11
 PHP_FUNCTION(pdf_begin_template)
 {
     PDF *pdf;
@@ -2429,6 +2452,7 @@ php_error_docref(NULL TSRMLS_CC, E_DEPRECATED, "Deprecated, use PDF_begin_templa
     
     RETURN_LONG(_result);
 }
+#endif /* PDFLIB_MAJORVERSION < 11 */
 /* }}} */
 
     
@@ -2699,6 +2723,7 @@ PHP_FUNCTION(pdf_clip)
 /* {{{ proto bool PDF_close(
 resource p)
  * Deprecated, use PDF_end_document() */
+#if PDFLIB_MAJORVERSION < 11
 PHP_FUNCTION(pdf_close)
 {
     PDF *pdf;
@@ -2755,6 +2780,7 @@ php_error_docref(NULL TSRMLS_CC, E_DEPRECATED, "Deprecated, use PDF_end_document
     
     RETURN_TRUE;
 }
+#endif /* PDFLIB_MAJORVERSION < 11 */
 /* }}} */
 
     
@@ -2966,6 +2992,7 @@ PHP_FUNCTION(pdf_close_image)
 /* {{{ proto bool PDF_close_pdi(
 resource p, int doc)
  * Deprecated, use PDF_close_pdi_document() */
+#if PDFLIB_MAJORVERSION < 11
 PHP_FUNCTION(pdf_close_pdi)
 {
     PDF *pdf;
@@ -3028,6 +3055,7 @@ php_error_docref(NULL TSRMLS_CC, E_DEPRECATED, "Deprecated, use PDF_close_pdi_do
     
     RETURN_TRUE;
 }
+#endif /* PDFLIB_MAJORVERSION < 11 */
 /* }}} */
 
     
@@ -5578,6 +5606,7 @@ PHP_FUNCTION(pdf_end_mc)
 /* {{{ proto bool PDF_end_page(
 resource p)
  * Deprecated, use PDF_end_page_ext() */
+#if PDFLIB_MAJORVERSION < 11
 PHP_FUNCTION(pdf_end_page)
 {
     PDF *pdf;
@@ -5634,6 +5663,7 @@ php_error_docref(NULL TSRMLS_CC, E_DEPRECATED, "Deprecated, use PDF_end_page_ext
     
     RETURN_TRUE;
 }
+#endif /* PDFLIB_MAJORVERSION < 11 */
 /* }}} */
 
     
@@ -5770,6 +5800,7 @@ PHP_FUNCTION(pdf_end_pattern)
 /* {{{ proto bool PDF_end_template(
 resource p)
  * Deprecated, use PDF_end_template_ext() */
+#if PDFLIB_MAJORVERSION < 11
 PHP_FUNCTION(pdf_end_template)
 {
     PDF *pdf;
@@ -5828,6 +5859,7 @@ php_error_docref(NULL TSRMLS_CC, E_DEPRECATED, "Deprecated, use PDF_end_template
     
     RETURN_TRUE;
 }
+#endif /* PDFLIB_MAJORVERSION < 11 */
 /* }}} */
 
     
@@ -6448,6 +6480,7 @@ PHP_FUNCTION(pdf_fill_textblock)
 /* {{{ proto int PDF_findfont(
 resource p, string fontname, string encoding, int embed)
  * Deprecated, use  PDF_load_font() */
+#if PDFLIB_MAJORVERSION < 11
 PHP_FUNCTION(pdf_findfont)
 {
     PDF *pdf;
@@ -6527,6 +6560,7 @@ php_error_docref(NULL TSRMLS_CC, E_DEPRECATED, "Deprecated, use  PDF_load_font()
     
     RETURN_LONG(_result);
 }
+#endif /* PDFLIB_MAJORVERSION < 11 */
 /* }}} */
 
     
@@ -7397,6 +7431,7 @@ PHP_FUNCTION(pdf_get_option)
 /* {{{ proto string PDF_get_parameter(
 resource p, string key, double modifier)
  * Deprecated, use PDF_get_option() and PDF_get_string() */
+#if PDFLIB_MAJORVERSION < 11
 PHP_FUNCTION(pdf_get_parameter)
 {
     PDF *pdf;
@@ -7477,12 +7512,14 @@ php_error_docref(NULL TSRMLS_CC, E_DEPRECATED, "Deprecated, use PDF_get_option()
     RETURN_STRING(_result ? (char *)_result : "", 1);
 #endif /* PHP_MAJOR_VERSION >= 7 */
 }
+#endif /* PDFLIB_MAJORVERSION < 11 */
 /* }}} */
 
     
 /* {{{ proto double PDF_get_pdi_value(
 resource p, string key, int doc, int page, int reserved)
  * Deprecated, use PDF_pcos_get_number() */
+#if PDFLIB_MAJORVERSION < 11
 PHP_FUNCTION(pdf_get_pdi_value)
 {
     PDF *pdf;
@@ -7566,6 +7603,7 @@ php_error_docref(NULL TSRMLS_CC, E_DEPRECATED, "Deprecated, use PDF_pcos_get_num
     
     RETURN_DOUBLE(_result);
 }
+#endif /* PDFLIB_MAJORVERSION < 11 */
 /* }}} */
 
     
@@ -7662,6 +7700,7 @@ PHP_FUNCTION(pdf_get_string)
 /* {{{ proto double PDF_get_value(
 resource p, string key, double modifier)
  * Deprecated, use PDF_get_option() */
+#if PDFLIB_MAJORVERSION < 11
 PHP_FUNCTION(pdf_get_value)
 {
     PDF *pdf;
@@ -7730,6 +7769,7 @@ php_error_docref(NULL TSRMLS_CC, E_DEPRECATED, "Deprecated, use PDF_get_option()
     
     RETURN_DOUBLE(_result);
 }
+#endif /* PDFLIB_MAJORVERSION < 11 */
 /* }}} */
 
     
@@ -8568,6 +8608,7 @@ PHP_FUNCTION(pdf_info_textline)
 /* {{{ proto bool PDF_initgraphics(
 resource p)
  * Deprecated, use PDF_set_graphics_option() */
+#if PDFLIB_MAJORVERSION < 11
 PHP_FUNCTION(pdf_initgraphics)
 {
     PDF *pdf;
@@ -8626,6 +8667,7 @@ php_error_docref(NULL TSRMLS_CC, E_DEPRECATED, "Deprecated, use PDF_set_graphics
     
     RETURN_TRUE;
 }
+#endif /* PDFLIB_MAJORVERSION < 11 */
 /* }}} */
 
     
@@ -9409,6 +9451,7 @@ PHP_FUNCTION(pdf_moveto)
 /* {{{ proto int PDF_open_ccitt(
 resource p, string filename, int width, int height, int BitReverse, int K, int BlackIs1)
  * Deprecated, use PDF_load_image() */
+#if PDFLIB_MAJORVERSION < 11
 PHP_FUNCTION(pdf_open_ccitt)
 {
     PDF *pdf;
@@ -9504,12 +9547,14 @@ php_error_docref(NULL TSRMLS_CC, E_DEPRECATED, "Deprecated, use PDF_load_image()
     
     RETURN_LONG(_result);
 }
+#endif /* PDFLIB_MAJORVERSION < 11 */
 /* }}} */
 
     
 /* {{{ proto int PDF_open_file(
 resource p, string filename)
  * Deprecated, use PDF_begin_document() */
+#if PDFLIB_MAJORVERSION < 11
 PHP_FUNCTION(pdf_open_file)
 {
     PDF *pdf;
@@ -9581,12 +9626,14 @@ php_error_docref(NULL TSRMLS_CC, E_DEPRECATED, "Deprecated, use PDF_begin_docume
     
     RETURN_LONG(_result);
 }
+#endif /* PDFLIB_MAJORVERSION < 11 */
 /* }}} */
 
     
 /* {{{ proto int PDF_open_image_file(
 resource p, string imagetype, string filename, string stringparam, int intparam)
  * Deprecated, use PDF_load_image() */
+#if PDFLIB_MAJORVERSION < 11
 PHP_FUNCTION(pdf_open_image_file)
 {
     PDF *pdf;
@@ -9674,6 +9721,7 @@ php_error_docref(NULL TSRMLS_CC, E_DEPRECATED, "Deprecated, use PDF_load_image()
     
     RETURN_LONG(_result);
 }
+#endif /* PDFLIB_MAJORVERSION < 11 */
 /* }}} */
 
     
@@ -10102,6 +10150,7 @@ PHP_FUNCTION(pdf_pcos_get_stream)
 /* {{{ proto bool PDF_place_image(
 resource p, int image, double x, double y, double scale)
  * Deprecated, use PDF_fit_image() */
+#if PDFLIB_MAJORVERSION < 11
 PHP_FUNCTION(pdf_place_image)
 {
     PDF *pdf;
@@ -10167,12 +10216,14 @@ php_error_docref(NULL TSRMLS_CC, E_DEPRECATED, "Deprecated, use PDF_fit_image()"
     
     RETURN_TRUE;
 }
+#endif /* PDFLIB_MAJORVERSION < 11 */
 /* }}} */
 
     
 /* {{{ proto bool PDF_place_pdi_page(
 resource p, int page, double x, double y, double sx, double sy)
  * Deprecated, use PDF_fit_pdi_page() */
+#if PDFLIB_MAJORVERSION < 11
 PHP_FUNCTION(pdf_place_pdi_page)
 {
     PDF *pdf;
@@ -10239,6 +10290,7 @@ php_error_docref(NULL TSRMLS_CC, E_DEPRECATED, "Deprecated, use PDF_fit_pdi_page
     
     RETURN_TRUE;
 }
+#endif /* PDFLIB_MAJORVERSION < 11 */
 /* }}} */
 
     
@@ -11011,6 +11063,7 @@ PHP_FUNCTION(pdf_scale)
 /* {{{ proto bool PDF_set_border_color(
 resource p, double red, double green, double blue)
  * Deprecated, use PDF_create_annotation() */
+#if PDFLIB_MAJORVERSION < 11
 PHP_FUNCTION(pdf_set_border_color)
 {
     PDF *pdf;
@@ -11070,12 +11123,14 @@ php_error_docref(NULL TSRMLS_CC, E_DEPRECATED, "Deprecated, use PDF_create_annot
     
     RETURN_TRUE;
 }
+#endif /* PDFLIB_MAJORVERSION < 11 */
 /* }}} */
 
     
 /* {{{ proto bool PDF_set_border_dash(
 resource p, double b, double w)
  * Deprecated, use PDF_create_annotation() */
+#if PDFLIB_MAJORVERSION < 11
 PHP_FUNCTION(pdf_set_border_dash)
 {
     PDF *pdf;
@@ -11134,12 +11189,14 @@ php_error_docref(NULL TSRMLS_CC, E_DEPRECATED, "Deprecated, use PDF_create_annot
     
     RETURN_TRUE;
 }
+#endif /* PDFLIB_MAJORVERSION < 11 */
 /* }}} */
 
     
 /* {{{ proto bool PDF_set_border_style(
 resource p, string style, double width)
  * Deprecated, use PDF_create_annotation() */
+#if PDFLIB_MAJORVERSION < 11
 PHP_FUNCTION(pdf_set_border_style)
 {
     PDF *pdf;
@@ -11205,6 +11262,7 @@ php_error_docref(NULL TSRMLS_CC, E_DEPRECATED, "Deprecated, use PDF_create_annot
     
     RETURN_TRUE;
 }
+#endif /* PDFLIB_MAJORVERSION < 11 */
 /* }}} */
 
     
@@ -11576,6 +11634,7 @@ PHP_FUNCTION(pdf_set_option)
 /* {{{ proto bool PDF_set_parameter(
 resource p, string key, string value)
  * Deprecated, use PDF_set_option(), PDF_set_text_option() and PDF_set_graphics_option() */
+#if PDFLIB_MAJORVERSION < 11
 PHP_FUNCTION(pdf_set_parameter)
 {
     PDF *pdf;
@@ -11650,6 +11709,7 @@ php_error_docref(NULL TSRMLS_CC, E_DEPRECATED, "Deprecated, use PDF_set_option()
     
     RETURN_TRUE;
 }
+#endif /* PDFLIB_MAJORVERSION < 11 */
 /* }}} */
 
     
@@ -11790,6 +11850,7 @@ PHP_FUNCTION(pdf_set_text_pos)
 /* {{{ proto bool PDF_set_value(
 resource p, string key, double value)
  * Deprecated, use PDF_set_option(), PDF_set_text_option() and PDF_set_graphics_option(). */
+#if PDFLIB_MAJORVERSION < 11
 PHP_FUNCTION(pdf_set_value)
 {
     PDF *pdf;
@@ -11857,6 +11918,7 @@ php_error_docref(NULL TSRMLS_CC, E_DEPRECATED, "Deprecated, use PDF_set_option()
     
     RETURN_TRUE;
 }
+#endif /* PDFLIB_MAJORVERSION < 11 */
 /* }}} */
 
     
@@ -11944,6 +12006,7 @@ PHP_FUNCTION(pdf_setcolor)
 /* {{{ proto bool PDF_setdash(
 resource p, double b, double w)
  * Deprecated, use PDF_set_graphics_option() */
+#if PDFLIB_MAJORVERSION < 11
 PHP_FUNCTION(pdf_setdash)
 {
     PDF *pdf;
@@ -12004,12 +12067,14 @@ php_error_docref(NULL TSRMLS_CC, E_DEPRECATED, "Deprecated, use PDF_set_graphics
     
     RETURN_TRUE;
 }
+#endif /* PDFLIB_MAJORVERSION < 11 */
 /* }}} */
 
     
 /* {{{ proto bool PDF_setdashpattern(
 resource p, string optlist)
  * Deprecated, use PDF_set_graphics_option() */
+#if PDFLIB_MAJORVERSION < 11
 PHP_FUNCTION(pdf_setdashpattern)
 {
     PDF *pdf;
@@ -12076,12 +12141,14 @@ php_error_docref(NULL TSRMLS_CC, E_DEPRECATED, "Deprecated, use PDF_set_graphics
     
     RETURN_TRUE;
 }
+#endif /* PDFLIB_MAJORVERSION < 11 */
 /* }}} */
 
     
 /* {{{ proto bool PDF_setflat(
 resource p, double flatness)
  * Deprecated, use PDF_set_graphics_option() */
+#if PDFLIB_MAJORVERSION < 11
 PHP_FUNCTION(pdf_setflat)
 {
     PDF *pdf;
@@ -12141,6 +12208,7 @@ php_error_docref(NULL TSRMLS_CC, E_DEPRECATED, "Deprecated, use PDF_set_graphics
     
     RETURN_TRUE;
 }
+#endif /* PDFLIB_MAJORVERSION < 11 */
 /* }}} */
 
     
@@ -12215,6 +12283,7 @@ PHP_FUNCTION(pdf_setfont)
 /* {{{ proto bool PDF_setgray(
 resource p, double gray)
  * Deprecated, use PDF_setcolor() */
+#if PDFLIB_MAJORVERSION < 11
 PHP_FUNCTION(pdf_setgray)
 {
     PDF *pdf;
@@ -12272,12 +12341,14 @@ php_error_docref(NULL TSRMLS_CC, E_DEPRECATED, "Deprecated, use PDF_setcolor()")
     
     RETURN_TRUE;
 }
+#endif /* PDFLIB_MAJORVERSION < 11 */
 /* }}} */
 
     
 /* {{{ proto bool PDF_setgray_fill(
 resource p, double gray)
  * Deprecated, use PDF_setcolor() */
+#if PDFLIB_MAJORVERSION < 11
 PHP_FUNCTION(pdf_setgray_fill)
 {
     PDF *pdf;
@@ -12335,12 +12406,14 @@ php_error_docref(NULL TSRMLS_CC, E_DEPRECATED, "Deprecated, use PDF_setcolor()")
     
     RETURN_TRUE;
 }
+#endif /* PDFLIB_MAJORVERSION < 11 */
 /* }}} */
 
     
 /* {{{ proto bool PDF_setgray_stroke(
 resource p, double gray)
  * Deprecated, use PDF_setcolor() */
+#if PDFLIB_MAJORVERSION < 11
 PHP_FUNCTION(pdf_setgray_stroke)
 {
     PDF *pdf;
@@ -12398,12 +12471,14 @@ php_error_docref(NULL TSRMLS_CC, E_DEPRECATED, "Deprecated, use PDF_setcolor()")
     
     RETURN_TRUE;
 }
+#endif /* PDFLIB_MAJORVERSION < 11 */
 /* }}} */
 
     
 /* {{{ proto bool PDF_setlinecap(
 resource p, int linecap)
  * Deprecated, use PDF_set_graphics_option() */
+#if PDFLIB_MAJORVERSION < 11
 PHP_FUNCTION(pdf_setlinecap)
 {
     PDF *pdf;
@@ -12468,12 +12543,14 @@ php_error_docref(NULL TSRMLS_CC, E_DEPRECATED, "Deprecated, use PDF_set_graphics
     
     RETURN_TRUE;
 }
+#endif /* PDFLIB_MAJORVERSION < 11 */
 /* }}} */
 
     
 /* {{{ proto bool PDF_setlinejoin(
 resource p, int linejoin)
  * Deprecated, use PDF_set_graphics_option() */
+#if PDFLIB_MAJORVERSION < 11
 PHP_FUNCTION(pdf_setlinejoin)
 {
     PDF *pdf;
@@ -12538,6 +12615,7 @@ php_error_docref(NULL TSRMLS_CC, E_DEPRECATED, "Deprecated, use PDF_set_graphics
     
     RETURN_TRUE;
 }
+#endif /* PDFLIB_MAJORVERSION < 11 */
 /* }}} */
 
     
@@ -12673,6 +12751,7 @@ PHP_FUNCTION(pdf_setmatrix)
 /* {{{ proto bool PDF_setmiterlimit(
 resource p, double miter)
  * Deprecated, use PDF_set_graphics_option() */
+#if PDFLIB_MAJORVERSION < 11
 PHP_FUNCTION(pdf_setmiterlimit)
 {
     PDF *pdf;
@@ -12732,12 +12811,14 @@ php_error_docref(NULL TSRMLS_CC, E_DEPRECATED, "Deprecated, use PDF_set_graphics
     
     RETURN_TRUE;
 }
+#endif /* PDFLIB_MAJORVERSION < 11 */
 /* }}} */
 
     
 /* {{{ proto bool PDF_setrgbcolor(
 resource p, double red, double green, double blue)
  * Deprecated, use PDF_setcolor() */
+#if PDFLIB_MAJORVERSION < 11
 PHP_FUNCTION(pdf_setrgbcolor)
 {
     PDF *pdf;
@@ -12797,12 +12878,14 @@ php_error_docref(NULL TSRMLS_CC, E_DEPRECATED, "Deprecated, use PDF_setcolor()")
     
     RETURN_TRUE;
 }
+#endif /* PDFLIB_MAJORVERSION < 11 */
 /* }}} */
 
     
 /* {{{ proto bool PDF_setrgbcolor_fill(
 resource p, double red, double green, double blue)
  * Deprecated, use PDF_setcolor() */
+#if PDFLIB_MAJORVERSION < 11
 PHP_FUNCTION(pdf_setrgbcolor_fill)
 {
     PDF *pdf;
@@ -12862,12 +12945,14 @@ php_error_docref(NULL TSRMLS_CC, E_DEPRECATED, "Deprecated, use PDF_setcolor()")
     
     RETURN_TRUE;
 }
+#endif /* PDFLIB_MAJORVERSION < 11 */
 /* }}} */
 
     
 /* {{{ proto bool PDF_setrgbcolor_stroke(
 resource p, double red, double green, double blue)
  * Deprecated, use PDF_setcolor() */
+#if PDFLIB_MAJORVERSION < 11
 PHP_FUNCTION(pdf_setrgbcolor_stroke)
 {
     PDF *pdf;
@@ -12927,6 +13012,7 @@ php_error_docref(NULL TSRMLS_CC, E_DEPRECATED, "Deprecated, use PDF_setcolor()")
     
     RETURN_TRUE;
 }
+#endif /* PDFLIB_MAJORVERSION < 11 */
 /* }}} */
 
     
@@ -13641,6 +13727,7 @@ PHP_FUNCTION(pdf_translate)
 /* {{{ proto string PDF_utf16_to_utf8(
 resource p, string utf16string)
  * Deprecated, use PDF_convert_to_unicode() */
+#if PDFLIB_MAJORVERSION < 11
 PHP_FUNCTION(pdf_utf16_to_utf8)
 {
     PDF *pdf;
@@ -13724,6 +13811,7 @@ php_error_docref(NULL TSRMLS_CC, E_DEPRECATED, "Deprecated, use PDF_convert_to_u
     RETURN_STRINGL(_result ? (char *)_result : "", outputlen, 1);
 #endif /* PHP_MAJOR_VERSION >= 7 */
 }
+#endif /* PDFLIB_MAJORVERSION < 11 */
 /* }}} */
 
     
@@ -13731,6 +13819,7 @@ php_error_docref(NULL TSRMLS_CC, E_DEPRECATED, "Deprecated, use PDF_convert_to_u
 resource p, string utf8string, string ordering)
  * Deprecated, use PDF_convert_to_unicode() */
 #if PDFLIB_MAJORVERSION >= 8
+#if PDFLIB_MAJORVERSION < 11
 PHP_FUNCTION(pdf_utf8_to_utf16)
 {
     PDF *pdf;
@@ -13820,6 +13909,7 @@ php_error_docref(NULL TSRMLS_CC, E_DEPRECATED, "Deprecated, use PDF_convert_to_u
     RETURN_STRINGL(_result ? (char *)_result : "", outputlen, 1);
 #endif /* PHP_MAJOR_VERSION >= 7 */
 }
+#endif /* PDFLIB_MAJORVERSION < 11 */
 #endif /* PDFLIB_MAJORVERSION >= 8 */
 /* }}} */
 
@@ -13828,6 +13918,7 @@ php_error_docref(NULL TSRMLS_CC, E_DEPRECATED, "Deprecated, use PDF_convert_to_u
 resource p, string utf32string)
  * Deprecated, use PDF_convert_to_unicode() */
 #if PDFLIB_MAJORVERSION >= 8
+#if PDFLIB_MAJORVERSION < 11
 PHP_FUNCTION(pdf_utf32_to_utf8)
 {
     PDF *pdf;
@@ -13911,6 +14002,7 @@ php_error_docref(NULL TSRMLS_CC, E_DEPRECATED, "Deprecated, use PDF_convert_to_u
     RETURN_STRINGL(_result ? (char *)_result : "", outputlen, 1);
 #endif /* PHP_MAJOR_VERSION >= 7 */
 }
+#endif /* PDFLIB_MAJORVERSION < 11 */
 #endif /* PDFLIB_MAJORVERSION >= 8 */
 /* }}} */
 
@@ -13919,6 +14011,7 @@ php_error_docref(NULL TSRMLS_CC, E_DEPRECATED, "Deprecated, use PDF_convert_to_u
 resource p, string utf8string, string ordering)
  * Deprecated, use PDF_convert_to_unicode() */
 #if PDFLIB_MAJORVERSION >= 8
+#if PDFLIB_MAJORVERSION < 11
 PHP_FUNCTION(pdf_utf8_to_utf32)
 {
     PDF *pdf;
@@ -14008,6 +14101,7 @@ php_error_docref(NULL TSRMLS_CC, E_DEPRECATED, "Deprecated, use PDF_convert_to_u
     RETURN_STRINGL(_result ? (char *)_result : "", outputlen, 1);
 #endif /* PHP_MAJOR_VERSION >= 7 */
 }
+#endif /* PDFLIB_MAJORVERSION < 11 */
 #endif /* PDFLIB_MAJORVERSION >= 8 */
 /* }}} */
 
@@ -14016,6 +14110,7 @@ php_error_docref(NULL TSRMLS_CC, E_DEPRECATED, "Deprecated, use PDF_convert_to_u
 resource p, string utf16string, string ordering)
  * Deprecated, use PDF_convert_to_unicode() */
 #if PDFLIB_MAJORVERSION >= 8
+#if PDFLIB_MAJORVERSION < 11
 PHP_FUNCTION(pdf_utf16_to_utf32)
 {
     PDF *pdf;
@@ -14107,6 +14202,7 @@ php_error_docref(NULL TSRMLS_CC, E_DEPRECATED, "Deprecated, use PDF_convert_to_u
     RETURN_STRINGL(_result ? (char *)_result : "", outputlen, 1);
 #endif /* PHP_MAJOR_VERSION >= 7 */
 }
+#endif /* PDFLIB_MAJORVERSION < 11 */
 #endif /* PDFLIB_MAJORVERSION >= 8 */
 /* }}} */
 
@@ -14114,6 +14210,7 @@ php_error_docref(NULL TSRMLS_CC, E_DEPRECATED, "Deprecated, use PDF_convert_to_u
 /* {{{ proto string PDF_utf32_to_utf16(
 resource p, string utf32string, string ordering)
  * Deprecated, use PDF_convert_to_unicode() */
+#if PDFLIB_MAJORVERSION < 11
 PHP_FUNCTION(pdf_utf32_to_utf16)
 {
     PDF *pdf;
@@ -14205,5 +14302,6 @@ php_error_docref(NULL TSRMLS_CC, E_DEPRECATED, "Deprecated, use PDF_convert_to_u
     RETURN_STRINGL(_result ? (char *)_result : "", outputlen, 1);
 #endif /* PHP_MAJOR_VERSION >= 7 */
 }
+#endif /* PDFLIB_MAJORVERSION < 11 */
 /* }}} */
 #endif /* defined(_WRAP_CODE) */
