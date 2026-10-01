@@ -381,18 +381,22 @@ PHP_MINIT_FUNCTION(PDFlib)
     zend_class_entry ce_ex, ce;
 
 
+#if PDFLIB_MAJORVERSION < 11
     if ((PDF_get_majorversion() != PDFLIB_MAJORVERSION) ||
             (PDF_get_minorversion() != PDFLIB_MINORVERSION)) {
         php_error_docref(NULL TSRMLS_CC, E_ERROR,
             "PDFlib error: Version mismatch in wrapper code");
     }
+#endif
 
     /* destructor for non-OO case */
     le_pdf = zend_register_list_destructors_ex(free_pdf_resource,
                                    NULL, "pdf object", module_number);
 
     /* this does something like setlocale("C", ...) in PDFlib 3.x */
+#if PDFLIB_MAJORVERSION < 11
     PDF_boot();
+#endif
 
     /* add PDFlibException class */
     {
@@ -435,7 +439,9 @@ PHP_MINIT_FUNCTION(PDFlib)
  */
 PHP_MSHUTDOWN_FUNCTION(PDFlib)
 {
+#if PDFLIB_MAJORVERSION < 11
     PDF_shutdown();
+#endif
     return SUCCESS;
 }
 /* }}} */
@@ -517,6 +523,7 @@ PHP_METHOD(PDFlibException, get_errnum)
 /* {{{ proto string PDF_get_pdi_parameter(
 resource p, string key, int doc, int page, int reserved)
  * Deprecated, use PDF_pcos_get_string(). */
+#if PDFLIB_MAJORVERSION < 11
 PHP_FUNCTION(pdf_get_pdi_parameter)
 {
     PDF *pdf;
@@ -596,10 +603,12 @@ PHP_FUNCTION(pdf_get_pdi_parameter)
     RETURN_STRINGL(_result ? (char *)_result : "", len, 1);
 #endif /* PHP_MAJOR_VERSION >= 7 */
 } /* }}} */
+#endif /* PDFLIB_MAJORVERSION < 11 */
 
 /* {{{ proto int pdf_open_pdi(resource p, string filename, string optlist,
  * int reserved);
  * Open a disk-based or virtual PDF document and prepare it for later use. */
+#if PDFLIB_MAJORVERSION < 11
 PHP_FUNCTION(pdf_open_pdi)
 {
     PDF *pdf;
@@ -670,6 +679,7 @@ PHP_FUNCTION(pdf_open_pdi)
 
     RETURN_LONG(retval); /* offset handled in PDFlib Kernel */
 }
+#endif /* PDFLIB_MAJORVERSION < 11 */
 /* }}} */
 
 /* {{{ proto bool pdf_delete(int p)
@@ -748,6 +758,7 @@ PHP_FUNCTION(pdf_new)
  * string data, int length, int width, int height, int components, int bpc,
  * string params)
  * Deprecated, use PDF_load_image() with virtual files. */
+#if PDFLIB_MAJORVERSION < 11
 PHP_FUNCTION(pdf_open_image)
 {
     PDF *pdf;
@@ -828,6 +839,7 @@ PHP_FUNCTION(pdf_open_image)
 
     RETURN_LONG(retval); /* offset handled in PDFlib Kernel */
 }
+#endif /* PDFLIB_MAJORVERSION < 11 */
 /* }}} */
 
 /* no longer supported */
@@ -844,6 +856,7 @@ PHP_FUNCTION(pdf_setpolydash)
 
 /* {{{ proto int PDF_show_boxed(resource p, string text, double left, double top, double width, double height, string hmode, string feature)
  * Deprecated, use PDF_fit_textline() or PDF_fit_textflow(). */
+#if PDFLIB_MAJORVERSION < 11
 PHP_FUNCTION(pdf_show_boxed)
 {
     PDF *pdf;
@@ -926,6 +939,7 @@ PHP_FUNCTION(pdf_show_boxed)
     
     RETURN_LONG(_result);
 } /* }}} */
+#endif /* PDFLIB_MAJORVERSION < 11 */
     
 /*
  * Local variables:

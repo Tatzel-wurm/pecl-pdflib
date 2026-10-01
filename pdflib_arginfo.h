@@ -2085,21 +2085,39 @@ ZEND_END_ARG_INFO()
 
 ZEND_FUNCTION(pdf_new);
 ZEND_FUNCTION(pdf_delete);
+#if PDFLIB_MAJORVERSION < 11
 ZEND_FUNCTION(pdf_get_pdi_parameter);
+#endif
+#if PDFLIB_MAJORVERSION < 11
 ZEND_FUNCTION(pdf_open_image);
+#endif
+#if PDFLIB_MAJORVERSION < 11
 ZEND_FUNCTION(pdf_open_pdi);
+#endif
 ZEND_FUNCTION(pdf_setpolydash);
+#if PDFLIB_MAJORVERSION < 11
 ZEND_FUNCTION(pdf_show_boxed);
+#endif
 ZEND_FUNCTION(pdf_activate_item);
+#if PDFLIB_MAJORVERSION < 11
 ZEND_FUNCTION(pdf_add_bookmark);
+#endif
+#if PDFLIB_MAJORVERSION < 11
 ZEND_FUNCTION(pdf_add_launchlink);
+#endif
+#if PDFLIB_MAJORVERSION < 11
 ZEND_FUNCTION(pdf_add_locallink);
+#endif
 ZEND_FUNCTION(pdf_add_nameddest);
+#if PDFLIB_MAJORVERSION < 11
 ZEND_FUNCTION(pdf_add_note);
+#endif
 #if PDFLIB_MAJORVERSION >= 8
 ZEND_FUNCTION(pdf_add_path_point);
 #endif
+#if PDFLIB_MAJORVERSION < 11
 ZEND_FUNCTION(pdf_add_pdflink);
+#endif
 #if PDFLIB_MAJORVERSION >= 8
 ZEND_FUNCTION(pdf_add_portfolio_file);
 #endif
@@ -2108,40 +2126,56 @@ ZEND_FUNCTION(pdf_add_portfolio_folder);
 #endif
 ZEND_FUNCTION(pdf_add_table_cell);
 ZEND_FUNCTION(pdf_add_textflow);
+#if PDFLIB_MAJORVERSION < 11
 ZEND_FUNCTION(pdf_add_thumbnail);
+#endif
+#if PDFLIB_MAJORVERSION < 11
 ZEND_FUNCTION(pdf_add_weblink);
+#endif
 #if PDFLIB_MAJORVERSION >= 8
 ZEND_FUNCTION(pdf_align);
 #endif
 ZEND_FUNCTION(pdf_arc);
 ZEND_FUNCTION(pdf_arcn);
+#if PDFLIB_MAJORVERSION < 11
 ZEND_FUNCTION(pdf_attach_file);
+#endif
 ZEND_FUNCTION(pdf_begin_document);
 #if (PDFLIB_MAJORVERSION >= 8 && PDFLIB_MINORVERSION >= 1) || PDFLIB_MAJORVERSION >= 9
 ZEND_FUNCTION(pdf_begin_dpart);
 #endif
 ZEND_FUNCTION(pdf_begin_font);
+#if PDFLIB_MAJORVERSION < 11
 ZEND_FUNCTION(pdf_begin_glyph);
+#endif
 #if PDFLIB_MAJORVERSION >= 9
 ZEND_FUNCTION(pdf_begin_glyph_ext);
 #endif
 ZEND_FUNCTION(pdf_begin_item);
 ZEND_FUNCTION(pdf_begin_layer);
 ZEND_FUNCTION(pdf_begin_mc);
+#if PDFLIB_MAJORVERSION < 11
 ZEND_FUNCTION(pdf_begin_page);
+#endif
 ZEND_FUNCTION(pdf_begin_page_ext);
+#if PDFLIB_MAJORVERSION < 11
 ZEND_FUNCTION(pdf_begin_pattern);
+#endif
 #if PDFLIB_MAJORVERSION >= 9 && (PDFLIB_MINORVERSION >= 1 || PDFLIB_REVISION >= 2)
 ZEND_FUNCTION(pdf_begin_pattern_ext);
 #endif
+#if PDFLIB_MAJORVERSION < 11
 ZEND_FUNCTION(pdf_begin_template);
+#endif
 ZEND_FUNCTION(pdf_begin_template_ext);
 ZEND_FUNCTION(pdf_circle);
 #if PDFLIB_MAJORVERSION >= 8
 ZEND_FUNCTION(pdf_circular_arc);
 #endif
 ZEND_FUNCTION(pdf_clip);
+#if PDFLIB_MAJORVERSION < 11
 ZEND_FUNCTION(pdf_close);
+#endif
 #if PDFLIB_MAJORVERSION >= 8
 ZEND_FUNCTION(pdf_close_font);
 #endif
@@ -2149,7 +2183,9 @@ ZEND_FUNCTION(pdf_close_font);
 ZEND_FUNCTION(pdf_close_graphics);
 #endif
 ZEND_FUNCTION(pdf_close_image);
+#if PDFLIB_MAJORVERSION < 11
 ZEND_FUNCTION(pdf_close_pdi);
+#endif
 ZEND_FUNCTION(pdf_close_pdi_document);
 ZEND_FUNCTION(pdf_close_pdi_page);
 ZEND_FUNCTION(pdf_closepath);
@@ -2199,10 +2235,14 @@ ZEND_FUNCTION(pdf_end_glyph);
 ZEND_FUNCTION(pdf_end_item);
 ZEND_FUNCTION(pdf_end_layer);
 ZEND_FUNCTION(pdf_end_mc);
+#if PDFLIB_MAJORVERSION < 11
 ZEND_FUNCTION(pdf_end_page);
+#endif
 ZEND_FUNCTION(pdf_end_page_ext);
 ZEND_FUNCTION(pdf_end_pattern);
+#if PDFLIB_MAJORVERSION < 11
 ZEND_FUNCTION(pdf_end_template);
+#endif
 #if PDFLIB_MAJORVERSION >= 8
 ZEND_FUNCTION(pdf_end_template_ext);
 #endif
@@ -2215,7 +2255,9 @@ ZEND_FUNCTION(pdf_fill_imageblock);
 ZEND_FUNCTION(pdf_fill_pdfblock);
 ZEND_FUNCTION(pdf_fill_stroke);
 ZEND_FUNCTION(pdf_fill_textblock);
+#if PDFLIB_MAJORVERSION < 11
 ZEND_FUNCTION(pdf_findfont);
+#endif
 #if (PDFLIB_MAJORVERSION >= 8 && PDFLIB_MINORVERSION >= 1) || PDFLIB_MAJORVERSION >= 9
 ZEND_FUNCTION(pdf_fit_graphics);
 #endif
@@ -2231,12 +2273,18 @@ ZEND_FUNCTION(pdf_get_errnum);
 #if PDFLIB_MAJORVERSION >= 9
 ZEND_FUNCTION(pdf_get_option);
 #endif
+#if PDFLIB_MAJORVERSION < 11
 ZEND_FUNCTION(pdf_get_parameter);
+#endif
+#if PDFLIB_MAJORVERSION < 11
 ZEND_FUNCTION(pdf_get_pdi_value);
+#endif
 #if PDFLIB_MAJORVERSION >= 9
 ZEND_FUNCTION(pdf_get_string);
 #endif
+#if PDFLIB_MAJORVERSION < 11
 ZEND_FUNCTION(pdf_get_value);
+#endif
 ZEND_FUNCTION(pdf_info_font);
 #if (PDFLIB_MAJORVERSION >= 8 && PDFLIB_MINORVERSION >= 1) || PDFLIB_MAJORVERSION >= 9
 ZEND_FUNCTION(pdf_info_graphics);
@@ -2257,7 +2305,9 @@ ZEND_FUNCTION(pdf_info_pvf);
 ZEND_FUNCTION(pdf_info_table);
 ZEND_FUNCTION(pdf_info_textflow);
 ZEND_FUNCTION(pdf_info_textline);
+#if PDFLIB_MAJORVERSION < 11
 ZEND_FUNCTION(pdf_initgraphics);
+#endif
 ZEND_FUNCTION(pdf_lineto);
 ZEND_FUNCTION(pdf_load_3ddata);
 #if (PDFLIB_MAJORVERSION >= 8 && PDFLIB_MINORVERSION >= 1) || PDFLIB_MAJORVERSION >= 9
@@ -2272,16 +2322,26 @@ ZEND_FUNCTION(pdf_load_image);
 ZEND_FUNCTION(pdf_makespotcolor);
 ZEND_FUNCTION(pdf_mc_point);
 ZEND_FUNCTION(pdf_moveto);
+#if PDFLIB_MAJORVERSION < 11
 ZEND_FUNCTION(pdf_open_ccitt);
+#endif
+#if PDFLIB_MAJORVERSION < 11
 ZEND_FUNCTION(pdf_open_file);
+#endif
+#if PDFLIB_MAJORVERSION < 11
 ZEND_FUNCTION(pdf_open_image_file);
+#endif
 ZEND_FUNCTION(pdf_open_pdi_document);
 ZEND_FUNCTION(pdf_open_pdi_page);
 ZEND_FUNCTION(pdf_pcos_get_number);
 ZEND_FUNCTION(pdf_pcos_get_string);
 ZEND_FUNCTION(pdf_pcos_get_stream);
+#if PDFLIB_MAJORVERSION < 11
 ZEND_FUNCTION(pdf_place_image);
+#endif
+#if PDFLIB_MAJORVERSION < 11
 ZEND_FUNCTION(pdf_place_pdi_page);
+#endif
 #if (PDFLIB_MAJORVERSION >= 8 && PDFLIB_MINORVERSION >= 1) || PDFLIB_MAJORVERSION >= 9
 ZEND_FUNCTION(pdf_poca_delete);
 #endif
@@ -2301,9 +2361,15 @@ ZEND_FUNCTION(pdf_resume_page);
 ZEND_FUNCTION(pdf_rotate);
 ZEND_FUNCTION(pdf_save);
 ZEND_FUNCTION(pdf_scale);
+#if PDFLIB_MAJORVERSION < 11
 ZEND_FUNCTION(pdf_set_border_color);
+#endif
+#if PDFLIB_MAJORVERSION < 11
 ZEND_FUNCTION(pdf_set_border_dash);
+#endif
+#if PDFLIB_MAJORVERSION < 11
 ZEND_FUNCTION(pdf_set_border_style);
+#endif
 #if PDFLIB_MAJORVERSION >= 9
 ZEND_FUNCTION(pdf_set_graphics_option);
 #endif
@@ -2313,28 +2379,56 @@ ZEND_FUNCTION(pdf_set_layer_dependency);
 #if PDFLIB_MAJORVERSION >= 8
 ZEND_FUNCTION(pdf_set_option);
 #endif
+#if PDFLIB_MAJORVERSION < 11
 ZEND_FUNCTION(pdf_set_parameter);
+#endif
 #if PDFLIB_MAJORVERSION >= 9
 ZEND_FUNCTION(pdf_set_text_option);
 #endif
 ZEND_FUNCTION(pdf_set_text_pos);
+#if PDFLIB_MAJORVERSION < 11
 ZEND_FUNCTION(pdf_set_value);
+#endif
 ZEND_FUNCTION(pdf_setcolor);
+#if PDFLIB_MAJORVERSION < 11
 ZEND_FUNCTION(pdf_setdash);
+#endif
+#if PDFLIB_MAJORVERSION < 11
 ZEND_FUNCTION(pdf_setdashpattern);
+#endif
+#if PDFLIB_MAJORVERSION < 11
 ZEND_FUNCTION(pdf_setflat);
+#endif
 ZEND_FUNCTION(pdf_setfont);
+#if PDFLIB_MAJORVERSION < 11
 ZEND_FUNCTION(pdf_setgray);
+#endif
+#if PDFLIB_MAJORVERSION < 11
 ZEND_FUNCTION(pdf_setgray_fill);
+#endif
+#if PDFLIB_MAJORVERSION < 11
 ZEND_FUNCTION(pdf_setgray_stroke);
+#endif
+#if PDFLIB_MAJORVERSION < 11
 ZEND_FUNCTION(pdf_setlinecap);
+#endif
+#if PDFLIB_MAJORVERSION < 11
 ZEND_FUNCTION(pdf_setlinejoin);
+#endif
 ZEND_FUNCTION(pdf_setlinewidth);
 ZEND_FUNCTION(pdf_setmatrix);
+#if PDFLIB_MAJORVERSION < 11
 ZEND_FUNCTION(pdf_setmiterlimit);
+#endif
+#if PDFLIB_MAJORVERSION < 11
 ZEND_FUNCTION(pdf_setrgbcolor);
+#endif
+#if PDFLIB_MAJORVERSION < 11
 ZEND_FUNCTION(pdf_setrgbcolor_fill);
+#endif
+#if PDFLIB_MAJORVERSION < 11
 ZEND_FUNCTION(pdf_setrgbcolor_stroke);
+#endif
 ZEND_FUNCTION(pdf_shading);
 ZEND_FUNCTION(pdf_shading_pattern);
 ZEND_FUNCTION(pdf_shfill);
@@ -2345,20 +2439,32 @@ ZEND_FUNCTION(pdf_stringwidth);
 ZEND_FUNCTION(pdf_stroke);
 ZEND_FUNCTION(pdf_suspend_page);
 ZEND_FUNCTION(pdf_translate);
+#if PDFLIB_MAJORVERSION < 11
 ZEND_FUNCTION(pdf_utf16_to_utf8);
+#endif
 #if PDFLIB_MAJORVERSION >= 8
+#if PDFLIB_MAJORVERSION < 11
 ZEND_FUNCTION(pdf_utf8_to_utf16);
 #endif
+#endif
 #if PDFLIB_MAJORVERSION >= 8
+#if PDFLIB_MAJORVERSION < 11
 ZEND_FUNCTION(pdf_utf32_to_utf8);
 #endif
+#endif
 #if PDFLIB_MAJORVERSION >= 8
+#if PDFLIB_MAJORVERSION < 11
 ZEND_FUNCTION(pdf_utf8_to_utf32);
 #endif
+#endif
 #if PDFLIB_MAJORVERSION >= 8
+#if PDFLIB_MAJORVERSION < 11
 ZEND_FUNCTION(pdf_utf16_to_utf32);
 #endif
+#endif
+#if PDFLIB_MAJORVERSION < 11
 ZEND_FUNCTION(pdf_utf32_to_utf16);
+#endif
 ZEND_METHOD(PDFlibException, get_apiname);
 ZEND_METHOD(PDFlibException, get_errmsg);
 ZEND_METHOD(PDFlibException, get_errnum);
@@ -2367,21 +2473,39 @@ ZEND_METHOD(PDFlibException, get_errnum);
 static const zend_function_entry ext_functions[] = {
 	ZEND_FE(pdf_new, arginfo_pdf_new)
 	ZEND_FE(pdf_delete, arginfo_pdf_delete)
+#if PDFLIB_MAJORVERSION < 11
 	ZEND_FE(pdf_get_pdi_parameter, arginfo_pdf_get_pdi_parameter)
+#endif
+#if PDFLIB_MAJORVERSION < 11
 	ZEND_FE(pdf_open_image, arginfo_pdf_open_image)
+#endif
+#if PDFLIB_MAJORVERSION < 11
 	ZEND_FE(pdf_open_pdi, arginfo_pdf_open_pdi)
+#endif
 	ZEND_FE(pdf_setpolydash, arginfo_pdf_setpolydash)
+#if PDFLIB_MAJORVERSION < 11
 	ZEND_FE(pdf_show_boxed, arginfo_pdf_show_boxed)
+#endif
 	ZEND_FE(pdf_activate_item, arginfo_pdf_activate_item)
+#if PDFLIB_MAJORVERSION < 11
 	ZEND_FE(pdf_add_bookmark, arginfo_pdf_add_bookmark)
+#endif
+#if PDFLIB_MAJORVERSION < 11
 	ZEND_FE(pdf_add_launchlink, arginfo_pdf_add_launchlink)
+#endif
+#if PDFLIB_MAJORVERSION < 11
 	ZEND_FE(pdf_add_locallink, arginfo_pdf_add_locallink)
+#endif
 	ZEND_FE(pdf_add_nameddest, arginfo_pdf_add_nameddest)
+#if PDFLIB_MAJORVERSION < 11
 	ZEND_FE(pdf_add_note, arginfo_pdf_add_note)
+#endif
 #if PDFLIB_MAJORVERSION >= 8
 	ZEND_FE(pdf_add_path_point, arginfo_pdf_add_path_point)
 #endif
+#if PDFLIB_MAJORVERSION < 11
 	ZEND_FE(pdf_add_pdflink, arginfo_pdf_add_pdflink)
+#endif
 #if PDFLIB_MAJORVERSION >= 8
 	ZEND_FE(pdf_add_portfolio_file, arginfo_pdf_add_portfolio_file)
 #endif
@@ -2390,40 +2514,56 @@ static const zend_function_entry ext_functions[] = {
 #endif
 	ZEND_FE(pdf_add_table_cell, arginfo_pdf_add_table_cell)
 	ZEND_FE(pdf_add_textflow, arginfo_pdf_add_textflow)
+#if PDFLIB_MAJORVERSION < 11
 	ZEND_FE(pdf_add_thumbnail, arginfo_pdf_add_thumbnail)
+#endif
+#if PDFLIB_MAJORVERSION < 11
 	ZEND_FE(pdf_add_weblink, arginfo_pdf_add_weblink)
+#endif
 #if PDFLIB_MAJORVERSION >= 8
 	ZEND_FE(pdf_align, arginfo_pdf_align)
 #endif
 	ZEND_FE(pdf_arc, arginfo_pdf_arc)
 	ZEND_FE(pdf_arcn, arginfo_pdf_arcn)
+#if PDFLIB_MAJORVERSION < 11
 	ZEND_FE(pdf_attach_file, arginfo_pdf_attach_file)
+#endif
 	ZEND_FE(pdf_begin_document, arginfo_pdf_begin_document)
 #if (PDFLIB_MAJORVERSION >= 8 && PDFLIB_MINORVERSION >= 1) || PDFLIB_MAJORVERSION >= 9
 	ZEND_FE(pdf_begin_dpart, arginfo_pdf_begin_dpart)
 #endif
 	ZEND_FE(pdf_begin_font, arginfo_pdf_begin_font)
+#if PDFLIB_MAJORVERSION < 11
 	ZEND_FE(pdf_begin_glyph, arginfo_pdf_begin_glyph)
+#endif
 #if PDFLIB_MAJORVERSION >= 9
 	ZEND_FE(pdf_begin_glyph_ext, arginfo_pdf_begin_glyph_ext)
 #endif
 	ZEND_FE(pdf_begin_item, arginfo_pdf_begin_item)
 	ZEND_FE(pdf_begin_layer, arginfo_pdf_begin_layer)
 	ZEND_FE(pdf_begin_mc, arginfo_pdf_begin_mc)
+#if PDFLIB_MAJORVERSION < 11
 	ZEND_FE(pdf_begin_page, arginfo_pdf_begin_page)
+#endif
 	ZEND_FE(pdf_begin_page_ext, arginfo_pdf_begin_page_ext)
+#if PDFLIB_MAJORVERSION < 11
 	ZEND_FE(pdf_begin_pattern, arginfo_pdf_begin_pattern)
+#endif
 #if PDFLIB_MAJORVERSION >= 9 && (PDFLIB_MINORVERSION >= 1 || PDFLIB_REVISION >= 2)
 	ZEND_FE(pdf_begin_pattern_ext, arginfo_pdf_begin_pattern_ext)
 #endif
+#if PDFLIB_MAJORVERSION < 11
 	ZEND_FE(pdf_begin_template, arginfo_pdf_begin_template)
+#endif
 	ZEND_FE(pdf_begin_template_ext, arginfo_pdf_begin_template_ext)
 	ZEND_FE(pdf_circle, arginfo_pdf_circle)
 #if PDFLIB_MAJORVERSION >= 8
 	ZEND_FE(pdf_circular_arc, arginfo_pdf_circular_arc)
 #endif
 	ZEND_FE(pdf_clip, arginfo_pdf_clip)
+#if PDFLIB_MAJORVERSION < 11
 	ZEND_FE(pdf_close, arginfo_pdf_close)
+#endif
 #if PDFLIB_MAJORVERSION >= 8
 	ZEND_FE(pdf_close_font, arginfo_pdf_close_font)
 #endif
@@ -2431,7 +2571,9 @@ static const zend_function_entry ext_functions[] = {
 	ZEND_FE(pdf_close_graphics, arginfo_pdf_close_graphics)
 #endif
 	ZEND_FE(pdf_close_image, arginfo_pdf_close_image)
+#if PDFLIB_MAJORVERSION < 11
 	ZEND_FE(pdf_close_pdi, arginfo_pdf_close_pdi)
+#endif
 	ZEND_FE(pdf_close_pdi_document, arginfo_pdf_close_pdi_document)
 	ZEND_FE(pdf_close_pdi_page, arginfo_pdf_close_pdi_page)
 	ZEND_FE(pdf_closepath, arginfo_pdf_closepath)
@@ -2481,10 +2623,14 @@ static const zend_function_entry ext_functions[] = {
 	ZEND_FE(pdf_end_item, arginfo_pdf_end_item)
 	ZEND_FE(pdf_end_layer, arginfo_pdf_end_layer)
 	ZEND_FE(pdf_end_mc, arginfo_pdf_end_mc)
+#if PDFLIB_MAJORVERSION < 11
 	ZEND_FE(pdf_end_page, arginfo_pdf_end_page)
+#endif
 	ZEND_FE(pdf_end_page_ext, arginfo_pdf_end_page_ext)
 	ZEND_FE(pdf_end_pattern, arginfo_pdf_end_pattern)
+#if PDFLIB_MAJORVERSION < 11
 	ZEND_FE(pdf_end_template, arginfo_pdf_end_template)
+#endif
 #if PDFLIB_MAJORVERSION >= 8
 	ZEND_FE(pdf_end_template_ext, arginfo_pdf_end_template_ext)
 #endif
@@ -2497,7 +2643,9 @@ static const zend_function_entry ext_functions[] = {
 	ZEND_FE(pdf_fill_pdfblock, arginfo_pdf_fill_pdfblock)
 	ZEND_FE(pdf_fill_stroke, arginfo_pdf_fill_stroke)
 	ZEND_FE(pdf_fill_textblock, arginfo_pdf_fill_textblock)
+#if PDFLIB_MAJORVERSION < 11
 	ZEND_FE(pdf_findfont, arginfo_pdf_findfont)
+#endif
 #if (PDFLIB_MAJORVERSION >= 8 && PDFLIB_MINORVERSION >= 1) || PDFLIB_MAJORVERSION >= 9
 	ZEND_FE(pdf_fit_graphics, arginfo_pdf_fit_graphics)
 #endif
@@ -2513,12 +2661,18 @@ static const zend_function_entry ext_functions[] = {
 #if PDFLIB_MAJORVERSION >= 9
 	ZEND_FE(pdf_get_option, arginfo_pdf_get_option)
 #endif
+#if PDFLIB_MAJORVERSION < 11
 	ZEND_FE(pdf_get_parameter, arginfo_pdf_get_parameter)
+#endif
+#if PDFLIB_MAJORVERSION < 11
 	ZEND_FE(pdf_get_pdi_value, arginfo_pdf_get_pdi_value)
+#endif
 #if PDFLIB_MAJORVERSION >= 9
 	ZEND_FE(pdf_get_string, arginfo_pdf_get_string)
 #endif
+#if PDFLIB_MAJORVERSION < 11
 	ZEND_FE(pdf_get_value, arginfo_pdf_get_value)
+#endif
 	ZEND_FE(pdf_info_font, arginfo_pdf_info_font)
 #if (PDFLIB_MAJORVERSION >= 8 && PDFLIB_MINORVERSION >= 1) || PDFLIB_MAJORVERSION >= 9
 	ZEND_FE(pdf_info_graphics, arginfo_pdf_info_graphics)
@@ -2539,7 +2693,9 @@ static const zend_function_entry ext_functions[] = {
 	ZEND_FE(pdf_info_table, arginfo_pdf_info_table)
 	ZEND_FE(pdf_info_textflow, arginfo_pdf_info_textflow)
 	ZEND_FE(pdf_info_textline, arginfo_pdf_info_textline)
+#if PDFLIB_MAJORVERSION < 11
 	ZEND_FE(pdf_initgraphics, arginfo_pdf_initgraphics)
+#endif
 	ZEND_FE(pdf_lineto, arginfo_pdf_lineto)
 	ZEND_FE(pdf_load_3ddata, arginfo_pdf_load_3ddata)
 #if (PDFLIB_MAJORVERSION >= 8 && PDFLIB_MINORVERSION >= 1) || PDFLIB_MAJORVERSION >= 9
@@ -2554,16 +2710,26 @@ static const zend_function_entry ext_functions[] = {
 	ZEND_FE(pdf_makespotcolor, arginfo_pdf_makespotcolor)
 	ZEND_FE(pdf_mc_point, arginfo_pdf_mc_point)
 	ZEND_FE(pdf_moveto, arginfo_pdf_moveto)
+#if PDFLIB_MAJORVERSION < 11
 	ZEND_FE(pdf_open_ccitt, arginfo_pdf_open_ccitt)
+#endif
+#if PDFLIB_MAJORVERSION < 11
 	ZEND_FE(pdf_open_file, arginfo_pdf_open_file)
+#endif
+#if PDFLIB_MAJORVERSION < 11
 	ZEND_FE(pdf_open_image_file, arginfo_pdf_open_image_file)
+#endif
 	ZEND_FE(pdf_open_pdi_document, arginfo_pdf_open_pdi_document)
 	ZEND_FE(pdf_open_pdi_page, arginfo_pdf_open_pdi_page)
 	ZEND_FE(pdf_pcos_get_number, arginfo_pdf_pcos_get_number)
 	ZEND_FE(pdf_pcos_get_string, arginfo_pdf_pcos_get_string)
 	ZEND_FE(pdf_pcos_get_stream, arginfo_pdf_pcos_get_stream)
+#if PDFLIB_MAJORVERSION < 11
 	ZEND_FE(pdf_place_image, arginfo_pdf_place_image)
+#endif
+#if PDFLIB_MAJORVERSION < 11
 	ZEND_FE(pdf_place_pdi_page, arginfo_pdf_place_pdi_page)
+#endif
 #if (PDFLIB_MAJORVERSION >= 8 && PDFLIB_MINORVERSION >= 1) || PDFLIB_MAJORVERSION >= 9
 	ZEND_FE(pdf_poca_delete, arginfo_pdf_poca_delete)
 #endif
@@ -2583,9 +2749,15 @@ static const zend_function_entry ext_functions[] = {
 	ZEND_FE(pdf_rotate, arginfo_pdf_rotate)
 	ZEND_FE(pdf_save, arginfo_pdf_save)
 	ZEND_FE(pdf_scale, arginfo_pdf_scale)
+#if PDFLIB_MAJORVERSION < 11
 	ZEND_FE(pdf_set_border_color, arginfo_pdf_set_border_color)
+#endif
+#if PDFLIB_MAJORVERSION < 11
 	ZEND_FE(pdf_set_border_dash, arginfo_pdf_set_border_dash)
+#endif
+#if PDFLIB_MAJORVERSION < 11
 	ZEND_FE(pdf_set_border_style, arginfo_pdf_set_border_style)
+#endif
 #if PDFLIB_MAJORVERSION >= 9
 	ZEND_FE(pdf_set_graphics_option, arginfo_pdf_set_graphics_option)
 #endif
@@ -2595,28 +2767,56 @@ static const zend_function_entry ext_functions[] = {
 #if PDFLIB_MAJORVERSION >= 8
 	ZEND_FE(pdf_set_option, arginfo_pdf_set_option)
 #endif
+#if PDFLIB_MAJORVERSION < 11
 	ZEND_FE(pdf_set_parameter, arginfo_pdf_set_parameter)
+#endif
 #if PDFLIB_MAJORVERSION >= 9
 	ZEND_FE(pdf_set_text_option, arginfo_pdf_set_text_option)
 #endif
 	ZEND_FE(pdf_set_text_pos, arginfo_pdf_set_text_pos)
+#if PDFLIB_MAJORVERSION < 11
 	ZEND_FE(pdf_set_value, arginfo_pdf_set_value)
+#endif
 	ZEND_FE(pdf_setcolor, arginfo_pdf_setcolor)
+#if PDFLIB_MAJORVERSION < 11
 	ZEND_FE(pdf_setdash, arginfo_pdf_setdash)
+#endif
+#if PDFLIB_MAJORVERSION < 11
 	ZEND_FE(pdf_setdashpattern, arginfo_pdf_setdashpattern)
+#endif
+#if PDFLIB_MAJORVERSION < 11
 	ZEND_FE(pdf_setflat, arginfo_pdf_setflat)
+#endif
 	ZEND_FE(pdf_setfont, arginfo_pdf_setfont)
+#if PDFLIB_MAJORVERSION < 11
 	ZEND_FE(pdf_setgray, arginfo_pdf_setgray)
+#endif
+#if PDFLIB_MAJORVERSION < 11
 	ZEND_FE(pdf_setgray_fill, arginfo_pdf_setgray_fill)
+#endif
+#if PDFLIB_MAJORVERSION < 11
 	ZEND_FE(pdf_setgray_stroke, arginfo_pdf_setgray_stroke)
+#endif
+#if PDFLIB_MAJORVERSION < 11
 	ZEND_FE(pdf_setlinecap, arginfo_pdf_setlinecap)
+#endif
+#if PDFLIB_MAJORVERSION < 11
 	ZEND_FE(pdf_setlinejoin, arginfo_pdf_setlinejoin)
+#endif
 	ZEND_FE(pdf_setlinewidth, arginfo_pdf_setlinewidth)
 	ZEND_FE(pdf_setmatrix, arginfo_pdf_setmatrix)
+#if PDFLIB_MAJORVERSION < 11
 	ZEND_FE(pdf_setmiterlimit, arginfo_pdf_setmiterlimit)
+#endif
+#if PDFLIB_MAJORVERSION < 11
 	ZEND_FE(pdf_setrgbcolor, arginfo_pdf_setrgbcolor)
+#endif
+#if PDFLIB_MAJORVERSION < 11
 	ZEND_FE(pdf_setrgbcolor_fill, arginfo_pdf_setrgbcolor_fill)
+#endif
+#if PDFLIB_MAJORVERSION < 11
 	ZEND_FE(pdf_setrgbcolor_stroke, arginfo_pdf_setrgbcolor_stroke)
+#endif
 	ZEND_FE(pdf_shading, arginfo_pdf_shading)
 	ZEND_FE(pdf_shading_pattern, arginfo_pdf_shading_pattern)
 	ZEND_FE(pdf_shfill, arginfo_pdf_shfill)
@@ -2627,20 +2827,32 @@ static const zend_function_entry ext_functions[] = {
 	ZEND_FE(pdf_stroke, arginfo_pdf_stroke)
 	ZEND_FE(pdf_suspend_page, arginfo_pdf_suspend_page)
 	ZEND_FE(pdf_translate, arginfo_pdf_translate)
+#if PDFLIB_MAJORVERSION < 11
 	ZEND_FE(pdf_utf16_to_utf8, arginfo_pdf_utf16_to_utf8)
+#endif
 #if PDFLIB_MAJORVERSION >= 8
+#if PDFLIB_MAJORVERSION < 11
 	ZEND_FE(pdf_utf8_to_utf16, arginfo_pdf_utf8_to_utf16)
 #endif
+#endif
 #if PDFLIB_MAJORVERSION >= 8
+#if PDFLIB_MAJORVERSION < 11
 	ZEND_FE(pdf_utf32_to_utf8, arginfo_pdf_utf32_to_utf8)
 #endif
+#endif
 #if PDFLIB_MAJORVERSION >= 8
+#if PDFLIB_MAJORVERSION < 11
 	ZEND_FE(pdf_utf8_to_utf32, arginfo_pdf_utf8_to_utf32)
 #endif
+#endif
 #if PDFLIB_MAJORVERSION >= 8
+#if PDFLIB_MAJORVERSION < 11
 	ZEND_FE(pdf_utf16_to_utf32, arginfo_pdf_utf16_to_utf32)
 #endif
+#endif
+#if PDFLIB_MAJORVERSION < 11
 	ZEND_FE(pdf_utf32_to_utf16, arginfo_pdf_utf32_to_utf16)
+#endif
 	ZEND_FE_END
 };
 
@@ -2648,11 +2860,19 @@ static const zend_function_entry ext_functions[] = {
 static const zend_function_entry class_PDFlib_methods[] = {
 	ZEND_ME_MAPPING(__construct, pdf_new, arginfo_class_PDFlib___construct, ZEND_ACC_PUBLIC)
 	ZEND_ME_MAPPING(delete, pdf_delete, arginfo_class_PDFlib_delete, ZEND_ACC_PUBLIC|ZEND_ACC_FINAL)
+#if PDFLIB_MAJORVERSION < 11
 	ZEND_ME_MAPPING(get_pdi_parameter, pdf_get_pdi_parameter, arginfo_class_PDFlib_get_pdi_parameter, ZEND_ACC_PUBLIC|ZEND_ACC_FINAL)
+#endif
+#if PDFLIB_MAJORVERSION < 11
 	ZEND_ME_MAPPING(open_pdi, pdf_open_pdi, arginfo_class_PDFlib_open_pdi, ZEND_ACC_PUBLIC|ZEND_ACC_FINAL)
+#endif
+#if PDFLIB_MAJORVERSION < 11
 	ZEND_ME_MAPPING(open_image, pdf_open_image, arginfo_class_PDFlib_open_image, ZEND_ACC_PUBLIC|ZEND_ACC_FINAL)
+#endif
 	ZEND_ME_MAPPING(setpolydash, pdf_setpolydash, arginfo_class_PDFlib_setpolydash, ZEND_ACC_PUBLIC|ZEND_ACC_FINAL)
+#if PDFLIB_MAJORVERSION < 11
 	ZEND_ME_MAPPING(show_boxed, pdf_show_boxed, arginfo_class_PDFlib_show_boxed, ZEND_ACC_PUBLIC|ZEND_ACC_FINAL)
+#endif
 	ZEND_ME_MAPPING(activate_item, pdf_activate_item, arginfo_class_PDFlib_activate_item, ZEND_ACC_PUBLIC|ZEND_ACC_FINAL)
 	ZEND_ME_MAPPING(add_nameddest, pdf_add_nameddest, arginfo_class_PDFlib_add_nameddest, ZEND_ACC_PUBLIC|ZEND_ACC_FINAL)
 #if PDFLIB_MAJORVERSION >= 8
@@ -2666,7 +2886,9 @@ static const zend_function_entry class_PDFlib_methods[] = {
 #endif
 	ZEND_ME_MAPPING(add_table_cell, pdf_add_table_cell, arginfo_class_PDFlib_add_table_cell, ZEND_ACC_PUBLIC|ZEND_ACC_FINAL)
 	ZEND_ME_MAPPING(add_textflow, pdf_add_textflow, arginfo_class_PDFlib_add_textflow, ZEND_ACC_PUBLIC|ZEND_ACC_FINAL)
+#if PDFLIB_MAJORVERSION < 11
 	ZEND_ME_MAPPING(add_thumbnail, pdf_add_thumbnail, arginfo_class_PDFlib_add_thumbnail, ZEND_ACC_PUBLIC|ZEND_ACC_FINAL)
+#endif
 #if PDFLIB_MAJORVERSION >= 8
 	ZEND_ME_MAPPING(align, pdf_align, arginfo_class_PDFlib_align, ZEND_ACC_PUBLIC|ZEND_ACC_FINAL)
 #endif
@@ -2677,7 +2899,9 @@ static const zend_function_entry class_PDFlib_methods[] = {
 	ZEND_ME_MAPPING(begin_dpart, pdf_begin_dpart, arginfo_class_PDFlib_begin_dpart, ZEND_ACC_PUBLIC|ZEND_ACC_FINAL)
 #endif
 	ZEND_ME_MAPPING(begin_font, pdf_begin_font, arginfo_class_PDFlib_begin_font, ZEND_ACC_PUBLIC|ZEND_ACC_FINAL)
+#if PDFLIB_MAJORVERSION < 11
 	ZEND_ME_MAPPING(begin_glyph, pdf_begin_glyph, arginfo_class_PDFlib_begin_glyph, ZEND_ACC_PUBLIC|ZEND_ACC_FINAL)
+#endif
 #if PDFLIB_MAJORVERSION >= 9
 	ZEND_ME_MAPPING(begin_glyph_ext, pdf_begin_glyph_ext, arginfo_class_PDFlib_begin_glyph_ext, ZEND_ACC_PUBLIC|ZEND_ACC_FINAL)
 #endif
@@ -2685,11 +2909,15 @@ static const zend_function_entry class_PDFlib_methods[] = {
 	ZEND_ME_MAPPING(begin_layer, pdf_begin_layer, arginfo_class_PDFlib_begin_layer, ZEND_ACC_PUBLIC|ZEND_ACC_FINAL)
 	ZEND_ME_MAPPING(begin_mc, pdf_begin_mc, arginfo_class_PDFlib_begin_mc, ZEND_ACC_PUBLIC|ZEND_ACC_FINAL)
 	ZEND_ME_MAPPING(begin_page_ext, pdf_begin_page_ext, arginfo_class_PDFlib_begin_page_ext, ZEND_ACC_PUBLIC|ZEND_ACC_FINAL)
+#if PDFLIB_MAJORVERSION < 11
 	ZEND_ME_MAPPING(begin_pattern, pdf_begin_pattern, arginfo_class_PDFlib_begin_pattern, ZEND_ACC_PUBLIC|ZEND_ACC_FINAL)
+#endif
 #if PDFLIB_MAJORVERSION >= 9 && (PDFLIB_MINORVERSION >= 1 || PDFLIB_REVISION >= 2)
 	ZEND_ME_MAPPING(begin_pattern_ext, pdf_begin_pattern_ext, arginfo_class_PDFlib_begin_pattern_ext, ZEND_ACC_PUBLIC|ZEND_ACC_FINAL)
 #endif
+#if PDFLIB_MAJORVERSION < 11
 	ZEND_ME_MAPPING(begin_template, pdf_begin_template, arginfo_class_PDFlib_begin_template, ZEND_ACC_PUBLIC|ZEND_ACC_FINAL)
+#endif
 	ZEND_ME_MAPPING(begin_template_ext, pdf_begin_template_ext, arginfo_class_PDFlib_begin_template_ext, ZEND_ACC_PUBLIC|ZEND_ACC_FINAL)
 	ZEND_ME_MAPPING(circle, pdf_circle, arginfo_class_PDFlib_circle, ZEND_ACC_PUBLIC|ZEND_ACC_FINAL)
 #if PDFLIB_MAJORVERSION >= 8
@@ -2703,7 +2931,9 @@ static const zend_function_entry class_PDFlib_methods[] = {
 	ZEND_ME_MAPPING(close_graphics, pdf_close_graphics, arginfo_class_PDFlib_close_graphics, ZEND_ACC_PUBLIC|ZEND_ACC_FINAL)
 #endif
 	ZEND_ME_MAPPING(close_image, pdf_close_image, arginfo_class_PDFlib_close_image, ZEND_ACC_PUBLIC|ZEND_ACC_FINAL)
+#if PDFLIB_MAJORVERSION < 11
 	ZEND_ME_MAPPING(close_pdi, pdf_close_pdi, arginfo_class_PDFlib_close_pdi, ZEND_ACC_PUBLIC|ZEND_ACC_FINAL)
+#endif
 	ZEND_ME_MAPPING(close_pdi_document, pdf_close_pdi_document, arginfo_class_PDFlib_close_pdi_document, ZEND_ACC_PUBLIC|ZEND_ACC_FINAL)
 	ZEND_ME_MAPPING(close_pdi_page, pdf_close_pdi_page, arginfo_class_PDFlib_close_pdi_page, ZEND_ACC_PUBLIC|ZEND_ACC_FINAL)
 	ZEND_ME_MAPPING(closepath, pdf_closepath, arginfo_class_PDFlib_closepath, ZEND_ACC_PUBLIC|ZEND_ACC_FINAL)
@@ -2755,7 +2985,9 @@ static const zend_function_entry class_PDFlib_methods[] = {
 	ZEND_ME_MAPPING(end_mc, pdf_end_mc, arginfo_class_PDFlib_end_mc, ZEND_ACC_PUBLIC|ZEND_ACC_FINAL)
 	ZEND_ME_MAPPING(end_page_ext, pdf_end_page_ext, arginfo_class_PDFlib_end_page_ext, ZEND_ACC_PUBLIC|ZEND_ACC_FINAL)
 	ZEND_ME_MAPPING(end_pattern, pdf_end_pattern, arginfo_class_PDFlib_end_pattern, ZEND_ACC_PUBLIC|ZEND_ACC_FINAL)
+#if PDFLIB_MAJORVERSION < 11
 	ZEND_ME_MAPPING(end_template, pdf_end_template, arginfo_class_PDFlib_end_template, ZEND_ACC_PUBLIC|ZEND_ACC_FINAL)
+#endif
 #if PDFLIB_MAJORVERSION >= 8
 	ZEND_ME_MAPPING(end_template_ext, pdf_end_template_ext, arginfo_class_PDFlib_end_template_ext, ZEND_ACC_PUBLIC|ZEND_ACC_FINAL)
 #endif
@@ -2783,12 +3015,18 @@ static const zend_function_entry class_PDFlib_methods[] = {
 #if PDFLIB_MAJORVERSION >= 9
 	ZEND_ME_MAPPING(get_option, pdf_get_option, arginfo_class_PDFlib_get_option, ZEND_ACC_PUBLIC|ZEND_ACC_FINAL)
 #endif
+#if PDFLIB_MAJORVERSION < 11
 	ZEND_ME_MAPPING(get_parameter, pdf_get_parameter, arginfo_class_PDFlib_get_parameter, ZEND_ACC_PUBLIC|ZEND_ACC_FINAL)
+#endif
+#if PDFLIB_MAJORVERSION < 11
 	ZEND_ME_MAPPING(get_pdi_value, pdf_get_pdi_value, arginfo_class_PDFlib_get_pdi_value, ZEND_ACC_PUBLIC|ZEND_ACC_FINAL)
+#endif
 #if PDFLIB_MAJORVERSION >= 9
 	ZEND_ME_MAPPING(get_string, pdf_get_string, arginfo_class_PDFlib_get_string, ZEND_ACC_PUBLIC|ZEND_ACC_FINAL)
 #endif
+#if PDFLIB_MAJORVERSION < 11
 	ZEND_ME_MAPPING(get_value, pdf_get_value, arginfo_class_PDFlib_get_value, ZEND_ACC_PUBLIC|ZEND_ACC_FINAL)
+#endif
 	ZEND_ME_MAPPING(info_font, pdf_info_font, arginfo_class_PDFlib_info_font, ZEND_ACC_PUBLIC|ZEND_ACC_FINAL)
 #if (PDFLIB_MAJORVERSION >= 8 && PDFLIB_MINORVERSION >= 1) || PDFLIB_MAJORVERSION >= 9
 	ZEND_ME_MAPPING(info_graphics, pdf_info_graphics, arginfo_class_PDFlib_info_graphics, ZEND_ACC_PUBLIC|ZEND_ACC_FINAL)
@@ -2809,7 +3047,9 @@ static const zend_function_entry class_PDFlib_methods[] = {
 	ZEND_ME_MAPPING(info_table, pdf_info_table, arginfo_class_PDFlib_info_table, ZEND_ACC_PUBLIC|ZEND_ACC_FINAL)
 	ZEND_ME_MAPPING(info_textflow, pdf_info_textflow, arginfo_class_PDFlib_info_textflow, ZEND_ACC_PUBLIC|ZEND_ACC_FINAL)
 	ZEND_ME_MAPPING(info_textline, pdf_info_textline, arginfo_class_PDFlib_info_textline, ZEND_ACC_PUBLIC|ZEND_ACC_FINAL)
+#if PDFLIB_MAJORVERSION < 11
 	ZEND_ME_MAPPING(initgraphics, pdf_initgraphics, arginfo_class_PDFlib_initgraphics, ZEND_ACC_PUBLIC|ZEND_ACC_FINAL)
+#endif
 	ZEND_ME_MAPPING(lineto, pdf_lineto, arginfo_class_PDFlib_lineto, ZEND_ACC_PUBLIC|ZEND_ACC_FINAL)
 	ZEND_ME_MAPPING(load_3ddata, pdf_load_3ddata, arginfo_class_PDFlib_load_3ddata, ZEND_ACC_PUBLIC|ZEND_ACC_FINAL)
 #if (PDFLIB_MAJORVERSION >= 8 && PDFLIB_MINORVERSION >= 1) || PDFLIB_MAJORVERSION >= 9
@@ -2857,22 +3097,38 @@ static const zend_function_entry class_PDFlib_methods[] = {
 #if PDFLIB_MAJORVERSION >= 8
 	ZEND_ME_MAPPING(set_option, pdf_set_option, arginfo_class_PDFlib_set_option, ZEND_ACC_PUBLIC|ZEND_ACC_FINAL)
 #endif
+#if PDFLIB_MAJORVERSION < 11
 	ZEND_ME_MAPPING(set_parameter, pdf_set_parameter, arginfo_class_PDFlib_set_parameter, ZEND_ACC_PUBLIC|ZEND_ACC_FINAL)
+#endif
 #if PDFLIB_MAJORVERSION >= 9
 	ZEND_ME_MAPPING(set_text_option, pdf_set_text_option, arginfo_class_PDFlib_set_text_option, ZEND_ACC_PUBLIC|ZEND_ACC_FINAL)
 #endif
 	ZEND_ME_MAPPING(set_text_pos, pdf_set_text_pos, arginfo_class_PDFlib_set_text_pos, ZEND_ACC_PUBLIC|ZEND_ACC_FINAL)
+#if PDFLIB_MAJORVERSION < 11
 	ZEND_ME_MAPPING(set_value, pdf_set_value, arginfo_class_PDFlib_set_value, ZEND_ACC_PUBLIC|ZEND_ACC_FINAL)
+#endif
 	ZEND_ME_MAPPING(setcolor, pdf_setcolor, arginfo_class_PDFlib_setcolor, ZEND_ACC_PUBLIC|ZEND_ACC_FINAL)
+#if PDFLIB_MAJORVERSION < 11
 	ZEND_ME_MAPPING(setdash, pdf_setdash, arginfo_class_PDFlib_setdash, ZEND_ACC_PUBLIC|ZEND_ACC_FINAL)
+#endif
+#if PDFLIB_MAJORVERSION < 11
 	ZEND_ME_MAPPING(setdashpattern, pdf_setdashpattern, arginfo_class_PDFlib_setdashpattern, ZEND_ACC_PUBLIC|ZEND_ACC_FINAL)
+#endif
+#if PDFLIB_MAJORVERSION < 11
 	ZEND_ME_MAPPING(setflat, pdf_setflat, arginfo_class_PDFlib_setflat, ZEND_ACC_PUBLIC|ZEND_ACC_FINAL)
+#endif
 	ZEND_ME_MAPPING(setfont, pdf_setfont, arginfo_class_PDFlib_setfont, ZEND_ACC_PUBLIC|ZEND_ACC_FINAL)
+#if PDFLIB_MAJORVERSION < 11
 	ZEND_ME_MAPPING(setlinecap, pdf_setlinecap, arginfo_class_PDFlib_setlinecap, ZEND_ACC_PUBLIC|ZEND_ACC_FINAL)
+#endif
+#if PDFLIB_MAJORVERSION < 11
 	ZEND_ME_MAPPING(setlinejoin, pdf_setlinejoin, arginfo_class_PDFlib_setlinejoin, ZEND_ACC_PUBLIC|ZEND_ACC_FINAL)
+#endif
 	ZEND_ME_MAPPING(setlinewidth, pdf_setlinewidth, arginfo_class_PDFlib_setlinewidth, ZEND_ACC_PUBLIC|ZEND_ACC_FINAL)
 	ZEND_ME_MAPPING(setmatrix, pdf_setmatrix, arginfo_class_PDFlib_setmatrix, ZEND_ACC_PUBLIC|ZEND_ACC_FINAL)
+#if PDFLIB_MAJORVERSION < 11
 	ZEND_ME_MAPPING(setmiterlimit, pdf_setmiterlimit, arginfo_class_PDFlib_setmiterlimit, ZEND_ACC_PUBLIC|ZEND_ACC_FINAL)
+#endif
 	ZEND_ME_MAPPING(shading, pdf_shading, arginfo_class_PDFlib_shading, ZEND_ACC_PUBLIC|ZEND_ACC_FINAL)
 	ZEND_ME_MAPPING(shading_pattern, pdf_shading_pattern, arginfo_class_PDFlib_shading_pattern, ZEND_ACC_PUBLIC|ZEND_ACC_FINAL)
 	ZEND_ME_MAPPING(shfill, pdf_shfill, arginfo_class_PDFlib_shfill, ZEND_ACC_PUBLIC|ZEND_ACC_FINAL)
@@ -2883,20 +3139,32 @@ static const zend_function_entry class_PDFlib_methods[] = {
 	ZEND_ME_MAPPING(stroke, pdf_stroke, arginfo_class_PDFlib_stroke, ZEND_ACC_PUBLIC|ZEND_ACC_FINAL)
 	ZEND_ME_MAPPING(suspend_page, pdf_suspend_page, arginfo_class_PDFlib_suspend_page, ZEND_ACC_PUBLIC|ZEND_ACC_FINAL)
 	ZEND_ME_MAPPING(translate, pdf_translate, arginfo_class_PDFlib_translate, ZEND_ACC_PUBLIC|ZEND_ACC_FINAL)
+#if PDFLIB_MAJORVERSION < 11
 	ZEND_ME_MAPPING(utf16_to_utf8, pdf_utf16_to_utf8, arginfo_class_PDFlib_utf16_to_utf8, ZEND_ACC_PUBLIC|ZEND_ACC_FINAL)
+#endif
 #if PDFLIB_MAJORVERSION >= 8
+#if PDFLIB_MAJORVERSION < 11
 	ZEND_ME_MAPPING(utf8_to_utf16, pdf_utf8_to_utf16, arginfo_class_PDFlib_utf8_to_utf16, ZEND_ACC_PUBLIC|ZEND_ACC_FINAL)
 #endif
+#endif
 #if PDFLIB_MAJORVERSION >= 8
+#if PDFLIB_MAJORVERSION < 11
 	ZEND_ME_MAPPING(utf32_to_utf8, pdf_utf32_to_utf8, arginfo_class_PDFlib_utf32_to_utf8, ZEND_ACC_PUBLIC|ZEND_ACC_FINAL)
 #endif
+#endif
 #if PDFLIB_MAJORVERSION >= 8
+#if PDFLIB_MAJORVERSION < 11
 	ZEND_ME_MAPPING(utf8_to_utf32, pdf_utf8_to_utf32, arginfo_class_PDFlib_utf8_to_utf32, ZEND_ACC_PUBLIC|ZEND_ACC_FINAL)
 #endif
+#endif
 #if PDFLIB_MAJORVERSION >= 8
+#if PDFLIB_MAJORVERSION < 11
 	ZEND_ME_MAPPING(utf16_to_utf32, pdf_utf16_to_utf32, arginfo_class_PDFlib_utf16_to_utf32, ZEND_ACC_PUBLIC|ZEND_ACC_FINAL)
 #endif
+#endif
+#if PDFLIB_MAJORVERSION < 11
 	ZEND_ME_MAPPING(utf32_to_utf16, pdf_utf32_to_utf16, arginfo_class_PDFlib_utf32_to_utf16, ZEND_ACC_PUBLIC|ZEND_ACC_FINAL)
+#endif
 	ZEND_FE_END
 };
 
